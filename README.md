@@ -13,10 +13,6 @@ Harmony Income allows users to deposit and withdraw One stablecoins using Anchor
 ```
 git clone git@github.com:harmony-one/oneAnchor.git
 ```
-* Root folder
-```
-oneAnchor/web-app/
-```
 * Install dependencies
 ```
 yarn
