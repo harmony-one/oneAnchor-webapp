@@ -61,7 +61,14 @@ const Deposit: React.FC= () => {
   
   const handleWithdraw = async () => {
     setValidationError('');
-    try {
+    setResult({
+      status: true,
+      transactionHash: "4234343234423",
+      blockHash: "983798237498324739824324",
+      errorMessage: ""
+    });
+    setOpenModal(true);
+    /*try {
       if (wallet.isConnected()) {
         if (amount) {
           setButtonDisable(true)
@@ -76,7 +83,7 @@ const Deposit: React.FC= () => {
       console.log("catched",e);
       setValidationError('');
       setAmount('');
-    }
+    }*/
   }
 
   return (
