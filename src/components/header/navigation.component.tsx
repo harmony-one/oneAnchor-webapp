@@ -6,12 +6,12 @@ const Navigation: React.FC = () => {
   return (
     <nav className="navigation">
       <ul className="navigation__list">
-        <li>
+        {/* <li>
           <NavLink className="navigation__item" to="/">
             Earn
           </NavLink>
         </li>
-        {/* <li>
+        <li>
           <NavLink
             className="navigation__item"
             to="/dashboard"
