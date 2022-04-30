@@ -3,12 +3,14 @@ import Web3 from "web3";
 import tokensABI from './contracts/tokens-abi';
 import incomeABI from './contracts/income-abi';
 
-window.ethereum.enable();
+if (window.ethereum) {
+  window.ethereum.enable();
+} 
 
 export const AUST_CONTRACT = process.env.REACT_APP_AUST_CONTRACT_ADDRESS;
 const incomeContractAddress = process.env.REACT_APP_INCOME_CONTRACT_ADDRESS;
 
-const Web3Client = new Web3(window.web3.currentProvider);
+const Web3Client = window.ethereum ? new Web3(window.web3.currentProvider) : null;
 
 const getContract = (abi, address) => {
   return new Web3Client.eth.Contract(abi, address);
