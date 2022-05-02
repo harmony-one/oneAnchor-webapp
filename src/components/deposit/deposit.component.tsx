@@ -89,7 +89,6 @@ const Deposit: React.FC= () => {
   return (
     <div className="deposit">
       <div className="deposit__title">Enter Amount</div>
-      <p></p>
       <input
         className="deposit__input"
         type="number"

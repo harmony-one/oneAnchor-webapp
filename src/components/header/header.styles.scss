@@ -11,7 +11,7 @@
       }
     }
 
-    .button {
+    .button-header {
       border-color: $dark-gray;
     }
   }  
@@ -30,7 +30,7 @@
       }
     }
 
-    .button {
+    .button-header{
       border-color: $light-gray;
       color: $white;
     }
@@ -79,7 +79,7 @@
     }
   }
 
-  .button {
+  .button-header {
     cursor: pointer;
     border-style: solid;
     border-width: 1px;

@@ -91,7 +91,7 @@ const Header: React.FC<IHeaderProps> = ({ state, updateState }) => {
         <Navigation />
         <div className="header__actions">
           <button
-            className="header__actions--theme button"
+            className="header__actions--theme button-header"
             onClick={() => updateState(!buttonisActive)}
           >
             <FontAwesomeIcon
@@ -101,7 +101,7 @@ const Header: React.FC<IHeaderProps> = ({ state, updateState }) => {
             />
           </button>
           <button
-            className="header__actions--wallet button"
+            className="header__actions--wallet button-header"
             onClick={handleClick}
           >
             {wallet.isConnected()

@@ -32,6 +32,7 @@
   &__title {
     font-weight: 600;
     color: $light-gray;
+    margin-bottom: 2vh;
   }
 
   &__available,
@@ -84,21 +85,5 @@
     width: 49.5%;
     font-size: 0.875rem;
   }
-
-  .button {
-    text-align: center;
-    color: $white;
-    font-weight: 700;
-    background-color: $blue;
-    border-style: none;
-    border-radius: 20px;
-    padding: 1.5em 3em 1.5em;
-
-    &:hover {
-      background-color: $blue-hover;
-    }
-    &:disabled {
-      background-color: $blue-hover;
-    }
-  }
+  
 }

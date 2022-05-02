@@ -4,24 +4,6 @@
   min-height: 100vh;
 }
 
-@keyframes fadeInOpacity {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeInOpacityB {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 /* Themes images and color properties */
 .light {
   background-color: $white;
@@ -52,5 +34,42 @@
 }
 
 .main {
-  width: 100%;
+  width: 100%; 
+}
+
+.button {  
+  cursor: pointer;
+  text-align: center;
+  color: $white;
+  font-weight: 700;
+  background-color: $blue;
+  border-style: none;
+  border-radius: 1.25em;
+  padding: 1.5em 3em 1.5em;
+
+  &:hover {
+    background-color: $blue-hover;
+  }
+  &:disabled {
+    background-color: $blue-hover;
+  }
+}
+
+/* Animations */
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInOpacityB {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
