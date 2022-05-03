@@ -1,8 +1,8 @@
 import React from "react";
-import { resultType } from "components/deposit/deposit.component";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import "./modal.styles.scss";
+import { receiptType } from "web3/web3.utils";
 
 type modalProps = {
   title: string;
@@ -10,7 +10,7 @@ type modalProps = {
   actions: any;
   setIsOpen: any;
   isProcessing: boolean;
-  result: resultType;
+  result: receiptType;
 };
 
 const LoadingIcon = () => {

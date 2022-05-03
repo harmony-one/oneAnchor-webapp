@@ -11,7 +11,7 @@ const Balance: React.FC = () => {
   useEffect(()=>{
     
     if (wallet.status === 'connected' && isSubscribed) {
-      getTokenBalance(wallet.account,AUST_CONTRACT,setAustBalance);
+      getTokenBalance(wallet.account!,AUST_CONTRACT!,setAustBalance);
       isSubscribed.current = false;      
     }
 
