@@ -1,8 +1,8 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
-import "./modal.styles.scss";
+import { faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
+import Message from "components/modal/message.component";
 import { receiptType } from "web3/web3.utils";
+import "./modal.styles.scss";
 
 type modalProps = {
   title: string;
@@ -16,14 +16,14 @@ type modalProps = {
 const LoadingIcon = () => {
   return (
     <svg
-      className="progress-bar"
-      viewBox="0 0 96 96"
+      className="modal__loader"
+      viewBox="0 0 20 20"
       xmlns="<http://www.w3.org/2000/svg>"
       preserveAspectRatio="xMidYMin"
     >
       <circle
-        cx="12"
-        cy="12"
+        cx="50%"
+        cy="50%"
         r="8"
         strokeWidth="2"
         stroke="#1F5AE2"
@@ -40,49 +40,18 @@ const Modal: React.FC<modalProps> = (props: modalProps) => {
     <div className="modal" onClick={() => setIsOpen(false)}>
       <div className="modal__container">
         {isProcessing ? (
-          <div className="modal__loader">
+          <div className="modal__process">
             <h2 className="modal__title">{title}</h2>
-            <LoadingIcon />
+            <div className="modal__progress">
+              <LoadingIcon />
+            </div>
           </div>
         ) : (
           <div className="modal__body">
             {result.errorMessage ? (
-              <div className="modal__error">{result.errorMessage}</div>
+              <Message status="Failure :(" icon={faXmark} />
             ) : (
-              <>
-                <div className="modal__header">
-                  <div className="modal__icon">
-                    <FontAwesomeIcon
-                      className="icon modal__check"
-                      icon={faCheck}
-                      size="2x"
-                    />
-                  </div>
-                  <h1 className="modal__title">Success! :)</h1>
-                </div>
-                <div className="modal__transaction">
-                  <div className="modal__transaction--value">3,291.39 ONE</div>
-                  <div className="modal__transaction--message">
-                    You Deposited
-                  </div>
-                </div>
-                <div className="modal__transaction">
-                  <div className="modal__transaction--value">2.281.37 aONE</div>
-                  <div className="modal__transaction--message">
-                    You Received
-                  </div>
-                </div>
-                <div className="modal__tx">
-                  <div className="modal__tx--hash">
-                    <div className="modal__tx--title">TX Hash</div>
-                    <div className="modal__tx--value">one1x9s...8jb</div>
-                  </div>
-                  <div className="modal__tx--fee">
-                    <div className="modal__tx--title">TX Fee</div>
-                    <div className="modal__tx--value">0.00291 ONE</div>
-                  </div>
-                </div>
-              </>
+              <Message status="Success! :)" icon={faCheck} />
             )}
           </div>
         )}

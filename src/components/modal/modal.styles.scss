@@ -50,8 +50,37 @@
     box-sizing: border-box;
   }
 
+  &__process {
+    @include flex-column();
+  }
+
+  &__title {
+    width: 100%;
+  }
+
+  &__progress {
+    margin: 3vh auto 3vh;
+    width: 4em;
+  }
+
   &__loader {
-    @include flex-center();
+    stroke-dasharray: 50;
+    stroke-dashoffset: 0;
+    animation: load 4s linear infinite;
+    transform-origin: center;
+    color: $blue;
+
+    @keyframes load {
+      0% {
+        stroke-dashoffset: 50;
+      }
+      50% {
+        stroke-dashoffset: 0;
+      }
+      100% {
+        stroke-dashoffset: -50;
+      }
+    }
   }
 
   &__icon {
