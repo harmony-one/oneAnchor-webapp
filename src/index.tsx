@@ -9,17 +9,24 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.scss';
 
+// Disable console log for production environment
 if (process.env.NODE_ENV === 'production') {
   console.log = () => {}
   console.error = () => {}
   console.debug = () => {}
 }
 
+// Get supported chain ids
 const chainID = process.env.REACT_APP_CHAIN_ID?.split(',').map(el => {
   let n = Number(el);
   return isNaN(n) ? el : n;
 });
 
+/*
+ * Providers:
+ * - Redux: Handles storage state 
+ * - UseWalletProvider: Handles connection to wallet Providers (e.g. Metamask)  
+ */
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

@@ -35,7 +35,7 @@ const LoadingIcon = () => {
 
 const Modal: React.FC<modalProps> = (props: modalProps) => {
   const { title, setIsOpen, result, isProcessing } = props;
-  console.log("MODAL", result);
+  // console.log("MODAL************", result);
   return (
     <div className="modal" onClick={() => setIsOpen(false)}>
       <div className="modal__container">
@@ -48,17 +48,19 @@ const Modal: React.FC<modalProps> = (props: modalProps) => {
           </div>
         ) : (
           <div className="modal__body">
-            {result.errorMessage ? (
-              <Message status="Failure :(" icon={faXmark} />
+            {result.status ? (
+              <Message status="Success! :)" icon={faCheck} result={result} />
             ) : (
-              <Message status="Success! :)" icon={faCheck} />
+              <Message status="Failure :(" icon={faXmark} result={result} />
             )}
           </div>
         )}
 
-        <button className="modal__cta button" onClick={() => setIsOpen(false)}>
-          Done
-        </button>
+        { !isProcessing ?
+          (<button className="modal__cta button" onClick={() => setIsOpen(false)}>
+            Done
+          </button>) : null
+        }
       </div>
     </div>
   );

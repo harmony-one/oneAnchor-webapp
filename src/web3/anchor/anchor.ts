@@ -1,5 +1,15 @@
-import { MnemonicKey, AnchorEarn, CHAINS, NETWORKS, DENOMS, MarketOutput, MarketEntry } from '@anchor-protocol/anchor-earn'
+import { MnemonicKey, 
+  AnchorEarn, 
+  CHAINS, 
+  NETWORKS, 
+  DENOMS, 
+  MarketOutput, 
+  MarketEntry } from '@anchor-protocol/anchor-earn'
 
+/*
+ * Retrieves Terras's APY.
+ * @return {float} the current APY
+ */
 export async function getApy() {
   try {
       const account = new MnemonicKey({

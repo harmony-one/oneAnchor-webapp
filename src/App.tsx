@@ -12,6 +12,10 @@ import "react-toastify/dist/ReactToastify.css";
 import './App.scss';
 import { useEffect } from 'react';
 
+/* 
+ * App's point of entry. 
+ * Handles routing + app's theme (dark|light)
+ */
 function App() {
   const toastMessage = useSelector((state: RootState) => state.toast.toast); 
   const [isActive, setActive] = useState<boolean>(false);

@@ -1,13 +1,15 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { receiptType, truncateAddressString, parseFromWei } from "web3/web3.utils";
 import "./modal.styles.scss";
 
 type messageProps = {
   status: string;
   icon: any;
+  result: receiptType;
 };
 
 const Modal: React.FC<messageProps> = (props: messageProps) => {
-  const { status, icon } = props;
+  const { status, icon, result } = props;
   return (
     <>
       <div className="modal__header">
@@ -21,7 +23,7 @@ const Modal: React.FC<messageProps> = (props: messageProps) => {
         <h1 className="modal__title">{status}</h1>
       </div>
       <div className="modal__transaction">
-        <div className="modal__transaction--value">0 ONE</div>
+        <div className="modal__transaction--value"> 0 ONE</div>
         <div className="modal__transaction--message">You Deposited</div>
       </div>
       <div className="modal__transaction">
@@ -31,11 +33,11 @@ const Modal: React.FC<messageProps> = (props: messageProps) => {
       <div className="modal__tx">
         <div className="modal__tx--hash">
           <div className="modal__tx--title">TX Hash</div>
-          <div className="modal__tx--value">one1x9s...8jb</div>
+          <div className="modal__tx--value">{truncateAddressString(result.transactionHash!,6)}</div>
         </div>
         <div className="modal__tx--fee">
           <div className="modal__tx--title">TX Fee</div>
-          <div className="modal__tx--value">0.0000 ONE</div>
+          <div className="modal__tx--value">{parseFromWei(result.cumulativeGasUsed)} ONE</div>
         </div>
       </div>
     </>
