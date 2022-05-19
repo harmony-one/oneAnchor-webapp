@@ -1,3 +1,6 @@
+May 19, 2022
+Based on current event this repo has been deprecated
+
 # Harmony Income frontend
 
 Harmony Income allows users to deposit and withdraw One stablecoins using Anchor Protocol.
